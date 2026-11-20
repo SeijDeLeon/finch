@@ -1,0 +1,15 @@
+/* Minimal app-level styles; Finch components bring their own via @blueskyproject/finch/style.css. */
+.ex-page { display: flex; flex-direction: column; gap: 1rem; padding-bottom: 2rem; }
+.ex-intro { background: white; color: #0f172a; border-radius: 0.5rem; padding: 1rem 1.25rem; }
+.ex-intro h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+.ex-intro ul { list-style: disc; padding-left: 1.25rem; margin-top: 0.5rem; }
+.ex-intro a { color: #0369a1; text-decoration: underline; }
+.ex-demo-notice { background: #fef3c7; color: #78350f; border: 1px solid #f59e0b; border-radius: 0.5rem; padding: 0.5rem 0.75rem; }
+.ex-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.ex-toolbar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.ex-muted { color: #64748b; padding: 0.5rem; }
+table.ex-items { width: 100%; border-collapse: collapse; font-size: 0.875rem; color: #0f172a; }
+table.ex-items th, table.ex-items td { text-align: left; padding: 0.375rem 0.5rem; border-bottom: 1px solid #e2e8f0; }
+table.ex-items code { font-size: 0.75rem; }
+.ex-status.ex-completed { color: #15803d; }
+.ex-status.ex-failed { color: #b91c1c; }

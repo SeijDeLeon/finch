@@ -34,6 +34,20 @@ npm run dev
 npm run storybook
 ```
 
+### Commands at a glance
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Finch's own development/playground pages (`src/main.tsx`) |
+| `npm run storybook` | Component stories and docs authoring |
+| `npm run build` | The publishable library build (`dist/`) |
+| `npm run dev:website` | The public landing page alone (`apps/website`) |
+| `npm run dev:example1` / `dev:example2` | A full example app (`apps/examples/<name>`) |
+| `npm run build:site` | The whole public documentation site, assembled into `site-dist/` |
+| `npm run preview:site` | Serve `site-dist/` under `/finch/` the way GitHub Pages does |
+
+The landing page and example apps live in [`apps/`](apps/README.md), which explains how to add an example and how its folder maps to a URL.
+
 ## Pre Commit Hooks
 Husky is used to run pre-commit hooks. To skip these and commit directly add the `-n` flag like:`git commit -m "..." -n`
 
@@ -140,14 +154,14 @@ npm install @blueskyproject/finch@alpha
 ## Updating Storybook on GH Pages
 Storybook is updated automatically via github actions on merges into main. Manual update methods are shown below.
 
-Please note that storybook on gh pages is hosted with a /finch path, and local development is served at /. The storybook manager is configured to look at the current path before deciding where to make files available at.
+Please note that storybook on gh pages is hosted with a /finch path, and local development is served at /. Production builds default to the `/finch/storybook/` base used by the combined documentation site (`npm run build:site`, deployed from forks by `.github/workflows/deploy-site.yml`); set `STORYBOOK_BASE=/finch/` for the root-level gh-pages deployment, as `publish-storybook.yml` does.
 
 After making changes to Storybook, commit.
 
 Then run the build and publish process
 
 ``` 
-npm run deploy-storybook 
+STORYBOOK_BASE=/finch/ npm run deploy-storybook 
 ```
 
 This will run the build process, upload the files to the gh-pages branch, and deploy the static files at [https://blueskyproject.io/finch/](https://blueskyproject.io/finch/).

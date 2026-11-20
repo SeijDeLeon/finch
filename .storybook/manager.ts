@@ -1,7 +1,9 @@
 import { addons } from '@storybook/addons';
 import { create } from '@storybook/theming';
 
-const basePath = window.location.pathname.startsWith('/finch') ? '/finch' : ''; //required to work on both local dev and gh pages
+// Relative to the Storybook root, so it works in local dev (/) and wherever the build is
+// published (/finch/storybook/ on the docs site, /finch/ on the legacy gh-pages deployment).
+const basePath = '.';
 
 //switch themes based on user preference
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;

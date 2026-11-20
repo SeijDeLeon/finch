@@ -30,9 +30,13 @@ const config: StorybookConfig = {
       propFilter: (prop) => !prop.parent?.fileName.includes('node_modules'),
     },
   },
-  async viteFinal(config) {
+  async viteFinal(config, { configType }) {
+    // Production builds are published under /finch/storybook/ in the combined docs site
+    // (see scripts/build-site.mjs). STORYBOOK_BASE overrides it, e.g. '/finch/' for the
+    // legacy gh-pages deployment that serves Storybook at the site root.
+    const productionBase = process.env.STORYBOOK_BASE || '/finch/storybook/';
     return mergeConfig(config, {
-      base: '/finch/',
+      base: configType === 'PRODUCTION' ? productionBase : '/',
       css: {
         postcss: {
           plugins: [tailwindcss()],

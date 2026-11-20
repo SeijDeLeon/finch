@@ -274,5 +274,11 @@ For detailed backend setup instructions, see our [Backend Setup documentation](h
 - [Tiled](https://github.com/bluesky/tiled)
 - [Ophyd WebSocket](https://github.com/bluesky/ophyd-websocket)
 
+## Documentation site
+
+The documentation site combines a landing page and full example apps from [`apps/`](apps/README.md)
+with Storybook, published under `/finch/`, `/finch/example1/` and `/finch/storybook/`. Build it with
+`npm run build:site`. See [CONTRIBUTING.md](CONTRIBUTING.md) for all commands.
+
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development and publishing guidelines.

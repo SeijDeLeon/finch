@@ -1,0 +1,10 @@
+/* Minimal app-level styles; Finch components bring their own via @blueskyproject/finch/style.css. */
+body { margin: 0; background: #0f172a; font-family: system-ui, sans-serif; }
+.ex-app { min-height: 100vh; padding: 1.5rem 1rem; color: #e2e8f0; }
+.ex-app-header h1 { font-size: 1.75rem; font-weight: 700; }
+.ex-app-header p { color: #94a3b8; max-width: 60ch; }
+.ex-dashboard { display: grid; gap: 1rem; margin-top: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.ex-card { padding: 1rem; color: #0f172a; height: 340px; min-width: 0; overflow: hidden; }
+.ex-card h2 { font-weight: 600; }
+.ex-big-number { font-size: 3rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.ex-big-number span { font-size: 1rem; color: #64748b; }
